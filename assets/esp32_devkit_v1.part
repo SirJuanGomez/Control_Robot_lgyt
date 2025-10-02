@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "20a5f04047bc79137f571d06",
+    "documentMicroversion": "352a6184ff93287cd34e2a96",
+    "documentVersion": "44c12a351940dd1a52317d81",
+    "elementId": "d7b79b5dbf28a50b5f9db316",
+    "fullConfiguration": "default",
+    "id": "Md86zgZolUSWyXeIn",
+    "isStandardContent": false,
+    "name": "ESP32-DEVKIT-V1 <1>",
+    "partId": "KJHQ",
+    "suppressed": false,
+    "type": "Part"
+}

@@ -1,0 +1,1270 @@
+#VRML_SIM R2025a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the Robot_Bipedo
+# Extracted from: i:/USC/Config_Robot/Robot_bipedo/urdf_model/robot_webots.urdf
+
+PROTO RBT_fix [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "Robot_Bipedo"  # Is `Robot.name`.
+  field  SFString    controller      "void"          # Is `Robot.controller`.
+  field  MFString    controllerArgs  []              # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""              # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE           # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE            # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE           # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      InertialUnit {
+        translation 0 0 0.24
+        name "SensorIMU"
+      }
+      Pose {
+        translation -0.059200 -0.009729 0.044310
+        rotation -0.000000 0.000000 1.000000 3.141590
+        children [
+          Shape {
+            appearance DEF servo_l_material PBRAppearance {
+              baseColor 0.615686 0.811765 0.929412
+              roughness 1.000000
+              metalness 0
+            }
+            geometry DEF servo_l Mesh {
+              url "../meshs/servo_l.stl"
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.029414 -0.012991 0.020522
+        rotation 0.000000 0.000000 1.000000 3.141590
+        children [
+          Shape {
+            appearance DEF conector_bh_material PBRAppearance {
+              baseColor 0.615686 0.811765 0.929412
+              roughness 1.000000
+              metalness 0
+            }
+            geometry DEF conector_bh Mesh {
+              url "../meshs/conector_bh.stl"
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.051750 -0.020681 -0.002776
+        rotation 0.000001 -0.707108 -0.707105 3.141591
+        children [
+          Shape {
+            appearance DEF servo_r_material PBRAppearance {
+              baseColor 0.615686 0.811765 0.929412
+              roughness 1.000000
+              metalness 0
+            }
+            geometry DEF servo_r Mesh {
+              url "../meshs/servo_r.stl"
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.029414 0.011009 0.020522
+        children [
+          Shape {
+            appearance DEF conector_bh_2_material PBRAppearance {
+              baseColor 0.615686 0.811765 0.929412
+              roughness 1.000000
+              metalness 0
+            }
+            geometry USE conector_bh
+          }
+        ]
+      }
+      Pose {
+        translation 0.003837 0.014302 0.001000
+        children [
+          Shape {
+            appearance DEF sensor_imu_material PBRAppearance {
+              baseColor 0.615686 0.811765 0.929412
+              roughness 1.000000
+              metalness 0
+            }
+            geometry DEF sensor_imu Mesh {
+              url "../meshs/sensor_imu.stl"
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.045000 -0.021891 0.000000
+        rotation 0.000000 0.000000 1.000000 1.570800
+        children [
+          Shape {
+            appearance DEF cadera_material PBRAppearance {
+              baseColor 0.615686 0.811765 0.929412
+              roughness 1.000000
+              metalness 0
+            }
+            geometry DEF cadera Mesh {
+              url "../meshs/cadera.stl"
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.051750 -0.020681 -0.022476
+        rotation -1.000000 -0.000000 -0.000000 1.570800
+        children [
+          Shape {
+            appearance DEF servo_l_2_material PBRAppearance {
+              baseColor 0.615686 0.811765 0.929412
+              roughness 1.000000
+              metalness 0
+            }
+            geometry USE servo_l
+          }
+        ]
+      }
+      Pose {
+        translation -0.000778 0.048373 0.084000
+        rotation 1.000000 0.000000 0.000000 1.570800
+        children [
+          Shape {
+            appearance DEF pecho_material PBRAppearance {
+              baseColor 0.615686 0.811765 0.929412
+              roughness 1.000000
+              metalness 0
+            }
+            geometry DEF pecho Mesh {
+              url "../meshs/pecho.stl"
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.059200 0.009970 0.044310
+        children [
+          Shape {
+            appearance DEF servo_r_2_material PBRAppearance {
+              baseColor 0.615686 0.811765 0.929412
+              roughness 1.000000
+              metalness 0
+            }
+            geometry USE servo_r
+          }
+        ]
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 1.000000 -0.000004 -0.000004
+          anchor -0.056750 0.010519 -0.012626
+        }
+        device [
+          RotationalMotor {
+            name "C_PD"
+            maxVelocity 10.0
+            minPosition -1.5708
+            maxPosition 1.5708
+            maxTorque 10.0
+          }
+          PositionSensor {
+            name "C_PD_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.056750 0.010519 -0.012626
+          rotation -0.577350 0.577352 -0.577350 2.094399
+          children [
+            Pose {
+              translation -0.012000 0.096000 0.053800
+              rotation 1.000000 0.000000 -0.000000 1.570800
+              children [
+                Shape {
+                  appearance DEF rodilla_material PBRAppearance {
+                    baseColor 0.615686 0.811765 0.929412
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry DEF rodilla Mesh {
+                    url "../meshs/rodilla.stl"
+                  }
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 -0.000003 -1.000000
+                anchor 0.000000 0.084000 0.000000
+              }
+              device [
+                RotationalMotor {
+                  name "P_D_1"
+                  maxVelocity 10.0
+                  minPosition -1.5708
+                  maxPosition 1.5708
+                  maxTorque 10.0
+                }
+                PositionSensor {
+                  name "P_D_1_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.084000 0.000000
+                rotation -0.000001 1.000000 -0.000001 3.141593
+                children [
+                  Pose {
+                    translation 0.009850 0.023800 -0.005000
+                    rotation -0.577350 -0.577350 -0.577352 2.094399
+                    children [
+                      Shape {
+                        appearance DEF servo_l_3_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry USE servo_l
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation 0.009850 -0.031200 -0.005000
+                    rotation -0.577350 -0.577350 -0.577352 2.094399
+                    children [
+                      Shape {
+                        appearance DEF servo_l_4_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry USE servo_l
+                      }
+                    ]
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis -0.000000 -0.000003 -1.000000
+                      anchor 0.000000 0.055000 -0.000000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "R_D"
+                        maxVelocity 10.0
+                        minPosition -1.5708
+                        maxPosition 1.5708
+                        maxTorque 10.0
+                      }
+                      PositionSensor {
+                        name "R_D_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.055000 -0.000000
+                      rotation 1.000000 0.000000 -0.000000 3.141590
+                      children [
+                        Pose {
+                          translation 0.027500 -0.075000 0.013800
+                          rotation -0.577350 -0.577350 -0.577352 2.094399
+                          children [
+                            Shape {
+                              appearance DEF pierna_material PBRAppearance {
+                                baseColor 0.615686 0.811765 0.929412
+                                roughness 1.000000
+                                metalness 0
+                              }
+                              geometry DEF pierna Mesh {
+                                url "../meshs/pierna.stl"
+                              }
+                            }
+                          ]
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis -1.000000 0.000004 -0.000004
+                            anchor -0.026300 -0.063000 0.025800
+                          }
+                          device [
+                            RotationalMotor {
+                              name "F_R"
+                              maxVelocity 10.0
+                              minPosition -1.5708
+                              maxPosition 1.5708
+                              maxTorque 10.0
+                            }
+                            PositionSensor {
+                              name "F_R_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation -0.026300 -0.063000 0.025800
+                            rotation 0.577350 -0.577352 -0.577350 2.094399
+                            children [
+                              Pose {
+                                translation 0.009850 -0.031200 -0.005000
+                                rotation -0.577350 -0.577350 -0.577352 2.094399
+                                children [
+                                  Shape {
+                                    appearance DEF servo_r_3_material PBRAppearance {
+                                      baseColor 0.615686 0.811765 0.929412
+                                      roughness 1.000000
+                                      metalness 0
+                                    }
+                                    geometry USE servo_r
+                                  }
+                                ]
+                              }
+                              Pose {
+                                translation 0.013876 -0.043010 0.049646
+                                rotation -0.707105 -0.707108 0.000001 3.141591
+                                children [
+                                  Shape {
+                                    appearance DEF pie_material PBRAppearance {
+                                      baseColor 0.615686 0.811765 0.929412
+                                      roughness 1.000000
+                                      metalness 0
+                                    }
+                                    geometry DEF pie Mesh {
+                                      url "../meshs/pie.stl"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                            name "servo_r"
+                            boundingObject Group {
+                              children [
+                                Pose {
+                                  translation 0.009850 -0.031200 -0.005000
+                                  rotation -0.577350 -0.577350 -0.577352 2.094399
+                                  children [
+                                    USE servo_r
+                                  ]
+                                }
+                                Pose {
+                                  translation 0.013876 -0.043010 0.049646
+                                  rotation -0.707105 -0.707108 0.000001 3.141591
+                                  children [
+                                    USE pie
+                                  ]
+                                }
+                              ]
+                            }
+                            physics Physics {
+                              density -1
+                              mass 0.319475
+                              centerOfMass [ 0.001822 -0.010767 -0.023854 ]
+                              inertiaMatrix [
+                                1.374810e-04 9.695400e-05 7.114700e-05
+                                4.269800e-07 -2.883480e-06 -1.732120e-06
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "pierna"
+                      boundingObject Pose {
+                        translation 0.027500 -0.075000 0.013800
+                        rotation -0.577350 -0.577350 -0.577352 2.094399
+                        children [
+                          USE pierna
+                        ]
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.021104
+                        centerOfMass [ -0.000000 -0.031606 0.026056 ]
+                        inertiaMatrix [
+                          1.324980e-05 1.217620e-05 1.301980e-05
+                          -6.573780e-23 -2.210570e-21 -6.590700e-08
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "pierna_d"
+                boundingObject Group {
+                  children [
+                    Pose {
+                      translation 0.009850 0.023800 -0.005000
+                      rotation -0.577350 -0.577350 -0.577352 2.094399
+                      children [
+                        USE servo_l
+                      ]
+                    }
+                    Pose {
+                      translation 0.009850 -0.031200 -0.005000
+                      rotation -0.577350 -0.577350 -0.577352 2.094399
+                      children [
+                        USE servo_l
+                      ]
+                    }
+                  ]
+                }
+                physics Physics {
+                  density -1
+                  mass 0.587055
+                  centerOfMass [ -0.000810 0.016798 -0.024916 ]
+                  inertiaMatrix [
+                    6.291670e-04 1.137580e-04 5.618720e-04
+                    -3.645710e-07 -1.983480e-06 -3.961430e-06
+                  ]
+                }
+              }
+            }
+          ]
+          name "rodilla"
+          boundingObject Pose {
+            translation -0.012000 0.096000 0.053800
+            rotation 1.000000 0.000000 -0.000000 1.570800
+            children [
+              USE rodilla
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 0.023597
+            centerOfMass [ -0.000000 0.038671 0.026300 ]
+            inertiaMatrix [
+              2.733310e-05 1.415170e-05 1.540010e-05
+              0.000000e+00 -3.960580e-37 0.000000e+00
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -1.000000 0.000003 0.000004
+          anchor 0.056750 0.010519 -0.012626
+        }
+        device [
+          RotationalMotor {
+            name "C_PI"
+            maxVelocity 10.0
+            minPosition -1.5708
+            maxPosition 1.5708
+            maxTorque 10.0
+          }
+          PositionSensor {
+            name "C_PI_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.056750 0.010519 -0.012626
+          rotation -0.707105 0.000001 0.707108 3.141591
+          children [
+            Pose {
+              translation 0.096000 -0.012000 -0.001200
+              rotation -0.577350 -0.577352 0.577350 2.094399
+              children [
+                Shape {
+                  appearance DEF rodilla_2_material PBRAppearance {
+                    baseColor 0.615686 0.811765 0.929412
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry USE rodilla
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000003 0.000000 -1.000000
+                anchor 0.084000 -0.000000 0.000000
+              }
+              device [
+                RotationalMotor {
+                  name "P_I_1"
+                  maxVelocity 10.0
+                  minPosition -1.5708
+                  maxPosition 1.5708
+                  maxTorque 10.0
+                }
+                PositionSensor {
+                  name "P_I_1_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.084000 -0.000000 0.000000
+                rotation 0.707105 0.707108 0.000001 3.141591
+                children [
+                  Pose {
+                    translation 0.009850 0.023800 -0.005000
+                    rotation -0.577350 -0.577350 -0.577352 2.094399
+                    children [
+                      Shape {
+                        appearance DEF servo_r_4_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry USE servo_r
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation 0.009850 -0.031200 -0.005000
+                    rotation -0.577350 -0.577350 -0.577352 2.094399
+                    children [
+                      Shape {
+                        appearance DEF servo_r_5_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry USE servo_r
+                      }
+                    ]
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 0.000003 -1.000000
+                      anchor -0.000000 0.055000 0.000000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "R_I"
+                        maxVelocity 10.0
+                        minPosition -1.5708
+                        maxPosition 1.5708
+                        maxTorque 10.0
+                      }
+                      PositionSensor {
+                        name "R_I_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation -0.000000 0.055000 0.000000
+                      rotation -1.000000 -0.000000 -0.000000 3.141590
+                      children [
+                        Pose {
+                          translation -0.027500 -0.075000 0.038800
+                          rotation -0.577350 0.577350 0.577352 2.094399
+                          children [
+                            Shape {
+                              appearance DEF pierna_2_material PBRAppearance {
+                                baseColor 0.615686 0.811765 0.929412
+                                roughness 1.000000
+                                metalness 0
+                              }
+                              geometry USE pierna
+                            }
+                          ]
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 1.000000 0.000004 -0.000004
+                            anchor 0.026300 -0.063000 0.026800
+                          }
+                          device [
+                            RotationalMotor {
+                              name "F_L"
+                              maxVelocity 10.0
+                              minPosition -1.5708
+                              maxPosition 1.5708
+                              maxTorque 10.0
+                            }
+                            PositionSensor {
+                              name "F_L_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.026300 -0.063000 0.026800
+                            rotation 0.577350 0.577352 0.577350 2.094399
+                            children [
+                              Pose {
+                                translation -0.013876 0.019990 0.049646
+                                rotation 0.707105 -0.707108 -0.000001 3.141591
+                                children [
+                                  Shape {
+                                    appearance DEF pie_2_material PBRAppearance {
+                                      baseColor 0.615686 0.811765 0.929412
+                                      roughness 1.000000
+                                      metalness 0
+                                    }
+                                    geometry USE pie
+                                  }
+                                ]
+                              }
+                              Pose {
+                                translation 0.009850 -0.031200 -0.005000
+                                rotation -0.577350 -0.577350 -0.577352 2.094399
+                                children [
+                                  Shape {
+                                    appearance DEF servo_l_5_material PBRAppearance {
+                                      baseColor 0.615686 0.811765 0.929412
+                                      roughness 1.000000
+                                      metalness 0
+                                    }
+                                    geometry USE servo_l
+                                  }
+                                ]
+                              }
+                            ]
+                            name "servo_l"
+                            boundingObject Group {
+                              children [
+                                Pose {
+                                  translation -0.013876 0.019990 0.049646
+                                  rotation 0.707105 -0.707108 -0.000001 3.141591
+                                  children [
+                                    USE pie
+                                  ]
+                                }
+                                Pose {
+                                  translation 0.009850 -0.031200 -0.005000
+                                  rotation -0.577350 -0.577350 -0.577352 2.094399
+                                  children [
+                                    USE servo_l
+                                  ]
+                                }
+                              ]
+                            }
+                            physics Physics {
+                              density -1
+                              mass 0.319495
+                              centerOfMass [ -0.001821 -0.010768 -0.023854 ]
+                              inertiaMatrix [
+                                1.374860e-04 9.695550e-05 7.115290e-05
+                                -4.220120e-07 2.884930e-06 -1.729010e-06
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "pierna_2"
+                      boundingObject Pose {
+                        translation -0.027500 -0.075000 0.038800
+                        rotation -0.577350 0.577350 0.577352 2.094399
+                        children [
+                          USE pierna
+                        ]
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.021104
+                        centerOfMass [ 0.000000 -0.031606 0.026544 ]
+                        inertiaMatrix [
+                          1.324980e-05 1.217620e-05 1.301980e-05
+                          -6.573780e-23 4.035640e-24 6.590700e-08
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "pierna_i"
+                boundingObject Group {
+                  children [
+                    Pose {
+                      translation 0.009850 0.023800 -0.005000
+                      rotation -0.577350 -0.577350 -0.577352 2.094399
+                      children [
+                        USE servo_r
+                      ]
+                    }
+                    Pose {
+                      translation 0.009850 -0.031200 -0.005000
+                      rotation -0.577350 -0.577350 -0.577352 2.094399
+                      children [
+                        USE servo_r
+                      ]
+                    }
+                  ]
+                }
+                physics Physics {
+                  density -1
+                  mass 0.587014
+                  centerOfMass [ 0.000811 0.016799 -0.024916 ]
+                  inertiaMatrix [
+                    6.291260e-04 1.137550e-04 5.618290e-04
+                    3.739350e-07 1.986390e-06 -3.968250e-06
+                  ]
+                }
+              }
+            }
+          ]
+          name "rodilla_2"
+          boundingObject Pose {
+            translation 0.096000 -0.012000 -0.001200
+            rotation -0.577350 -0.577352 0.577350 2.094399
+            children [
+              USE rodilla
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 0.023597
+            centerOfMass [ 0.038671 -0.000000 0.026300 ]
+            inertiaMatrix [
+              1.415170e-05 2.733310e-05 1.540010e-05
+              4.749610e-19 4.458310e-35 2.780340e-32
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 1.000000 -0.000003 0.000004
+          anchor -0.064200 0.000121 0.075510
+        }
+        device [
+          RotationalMotor {
+            name "H_D"
+            maxVelocity 10.0
+            minPosition -1.5708
+            maxPosition 1.5708
+            maxTorque 10.0
+          }
+          PositionSensor {
+            name "H_D_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.064200 0.000121 0.075510
+          rotation 0.707105 -0.000001 0.707108 3.141591
+          children [
+            Pose {
+              translation -0.025745 0.027500 -0.041144
+              rotation -0.000000 1.000000 0.000000 0.597177
+              children [
+                Shape {
+                  appearance DEF hombro_material PBRAppearance {
+                    baseColor 0.615686 0.811765 0.929412
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry DEF hombro Mesh {
+                    url "../meshs/hombro.stl"
+                  }
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis -0.000005 1.000000 -0.000003
+                anchor -0.020243 0.026250 -0.029769
+              }
+              device [
+                RotationalMotor {
+                  name "B_D"
+                  maxVelocity 10.0
+                  minPosition -1.5708
+                  maxPosition 1.5708
+                  maxTorque 10.0
+                }
+                PositionSensor {
+                  name "B_D_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation -0.020243 0.026250 -0.029769
+                rotation -0.212661 -0.690934 -0.690931 2.722509
+                children [
+                  Pose {
+                    translation 0.000589 -0.054989 -0.016354
+                    rotation 0.000001 -0.707108 -0.707105 3.141591
+                    children [
+                      Shape {
+                        appearance DEF conector_bh_3_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry USE conector_bh
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation 0.009850 -0.031200 -0.005000
+                    rotation -0.577350 -0.577350 -0.577352 2.094399
+                    children [
+                      Shape {
+                        appearance DEF servo_l_6_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry USE servo_l
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.016900 -0.112852 -0.000354
+                    rotation 0.000001 -0.707108 -0.707105 3.141591
+                    children [
+                      Shape {
+                        appearance DEF brazo_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry DEF brazo Mesh {
+                          url "../meshs/brazo.stl"
+                        }
+                      }
+                    ]
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 -0.000000 1.000000
+                      anchor 0.000017 -0.098510 -0.001354
+                    }
+                    device [
+                      RotationalMotor {
+                        name "M_D"
+                        maxVelocity 10.0
+                        maxPosition 3.14159
+                        maxTorque 10.0
+                      }
+                      PositionSensor {
+                        name "M_D_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000017 -0.098510 -0.001354
+                      rotation 0.000000 0.000000 1.000000 1.570800
+                      children [
+                        Pose {
+                          translation 0.009850 -0.031200 -0.005000
+                          rotation -0.577350 -0.577350 -0.577352 2.094399
+                          children [
+                            Shape {
+                              appearance DEF servo_r_6_material PBRAppearance {
+                                baseColor 0.615686 0.811765 0.929412
+                                roughness 1.000000
+                                metalness 0
+                              }
+                              geometry USE servo_r
+                            }
+                          ]
+                        }
+                      ]
+                      name "servo_r_2"
+                      boundingObject Pose {
+                        translation 0.009850 -0.031200 -0.005000
+                        rotation -0.577350 -0.577350 -0.577352 2.094399
+                        children [
+                          USE servo_r
+                        ]
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.293507
+                        centerOfMass [ 0.000811 -0.010701 -0.024916 ]
+                        inertiaMatrix [
+                          9.259800e-05 5.687730e-05 5.894990e-05
+                          1.869680e-07 9.931930e-07 -1.984130e-06
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "servo_l_2"
+                boundingObject Group {
+                  children [
+                    Pose {
+                      translation 0.000589 -0.054989 -0.016354
+                      rotation 0.000001 -0.707108 -0.707105 3.141591
+                      children [
+                        USE conector_bh
+                      ]
+                    }
+                    Pose {
+                      translation 0.009850 -0.031200 -0.005000
+                      rotation -0.577350 -0.577350 -0.577352 2.094399
+                      children [
+                        USE servo_l
+                      ]
+                    }
+                    Pose {
+                      translation -0.016900 -0.112852 -0.000354
+                      rotation 0.000001 -0.707108 -0.707105 3.141591
+                      children [
+                        USE brazo
+                      ]
+                    }
+                  ]
+                }
+                physics Physics {
+                  density -1
+                  mass 0.309442
+                  centerOfMass [ -0.000872 -0.013186 -0.025093 ]
+                  inertiaMatrix [
+                    1.431920e-04 6.510820e-05 1.034330e-04
+                    -1.059320e-07 -1.053640e-06 -4.487470e-06
+                  ]
+                }
+              }
+            }
+          ]
+          name "hombro"
+          boundingObject Pose {
+            translation -0.025745 0.027500 -0.041144
+            rotation -0.000000 1.000000 0.000000 0.597177
+            children [
+              USE hombro
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 0.013150
+            centerOfMass [ -0.007411 0.000597 -0.011148 ]
+            inertiaMatrix [
+              8.762350e-06 3.709450e-06 8.321730e-06
+              4.024030e-08 -1.193370e-06 6.874690e-08
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -1.000000 -0.000004 -0.000004
+          anchor 0.064200 0.000120 0.075510
+        }
+        device [
+          RotationalMotor {
+            name "H_I"
+            maxVelocity 10.0
+            minPosition -1.5708
+            maxPosition 1.5708
+            maxTorque 10.0
+          }
+          PositionSensor {
+            name "H_I_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.064200 0.000120 0.075510
+          rotation -0.577350 -0.577352 0.577350 2.094399
+          children [
+            Pose {
+              translation 0.027500 0.025745 -0.041144
+              rotation 0.282214 0.282213 -0.916903 1.657445
+              children [
+                Shape {
+                  appearance DEF hombro_2_material PBRAppearance {
+                    baseColor 0.615686 0.811765 0.929412
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry USE hombro
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 1.000000 0.000006 -0.000003
+                anchor 0.026250 0.020243 -0.029769
+              }
+              device [
+                RotationalMotor {
+                  name "B_I"
+                  maxVelocity 10.0
+                  minPosition -1.5708
+                  maxPosition 1.5708
+                  maxTorque 10.0
+                }
+                PositionSensor {
+                  name "B_I_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.026250 0.020243 -0.029769
+                rotation 0.662243 0.350526 0.662243 2.467315
+                children [
+                  Pose {
+                    translation 0.000589 -0.054989 -0.016354
+                    rotation 0.000001 -0.707108 -0.707105 3.141591
+                    children [
+                      Shape {
+                        appearance DEF conector_bh_4_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry USE conector_bh
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation -0.016900 -0.112852 -0.000354
+                    rotation 0.000001 -0.707108 -0.707105 3.141591
+                    children [
+                      Shape {
+                        appearance DEF brazo_2_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry USE brazo
+                      }
+                    ]
+                  }
+                  Pose {
+                    translation 0.009850 -0.031200 -0.005000
+                    rotation -0.577350 -0.577350 -0.577352 2.094399
+                    children [
+                      Shape {
+                        appearance DEF servo_l_7_material PBRAppearance {
+                          baseColor 0.615686 0.811765 0.929412
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry USE servo_l
+                      }
+                    ]
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 0.000000 1.000000
+                      anchor 0.000017 -0.098510 -0.001354
+                    }
+                    device [
+                      RotationalMotor {
+                        name "M_I"
+                        maxVelocity 10.0
+                        minPosition -1.5708
+                        maxPosition 1.5708
+                        maxTorque 10.0
+                      }
+                      PositionSensor {
+                        name "M_I_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000017 -0.098510 -0.001354
+                      rotation -0.000000 -0.000000 -1.000000 3.141590
+                      children [
+                        Pose {
+                          translation 0.009850 -0.031200 -0.005000
+                          rotation -0.577350 -0.577350 -0.577352 2.094399
+                          children [
+                            Shape {
+                              appearance DEF servo_r_7_material PBRAppearance {
+                                baseColor 0.615686 0.811765 0.929412
+                                roughness 1.000000
+                                metalness 0
+                              }
+                              geometry USE servo_r
+                            }
+                          ]
+                        }
+                      ]
+                      name "servo_r_3"
+                      boundingObject Pose {
+                        translation 0.009850 -0.031200 -0.005000
+                        rotation -0.577350 -0.577350 -0.577352 2.094399
+                        children [
+                          USE servo_r
+                        ]
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.293507
+                        centerOfMass [ 0.000811 -0.010701 -0.024916 ]
+                        inertiaMatrix [
+                          9.259800e-05 5.687730e-05 5.894990e-05
+                          1.869680e-07 9.931930e-07 -1.984130e-06
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "servo_l_3"
+                boundingObject Group {
+                  children [
+                    Pose {
+                      translation 0.000589 -0.054989 -0.016354
+                      rotation 0.000001 -0.707108 -0.707105 3.141591
+                      children [
+                        USE conector_bh
+                      ]
+                    }
+                    Pose {
+                      translation -0.016900 -0.112852 -0.000354
+                      rotation 0.000001 -0.707108 -0.707105 3.141591
+                      children [
+                        USE brazo
+                      ]
+                    }
+                    Pose {
+                      translation 0.009850 -0.031200 -0.005000
+                      rotation -0.577350 -0.577350 -0.577352 2.094399
+                      children [
+                        USE servo_l
+                      ]
+                    }
+                  ]
+                }
+                physics Physics {
+                  density -1
+                  mass 0.309442
+                  centerOfMass [ -0.000872 -0.013186 -0.025093 ]
+                  inertiaMatrix [
+                    1.431920e-04 6.510820e-05 1.034330e-04
+                    -1.059320e-07 -1.053640e-06 -4.487470e-06
+                  ]
+                }
+              }
+            }
+          ]
+          name "hombro_2"
+          boundingObject Pose {
+            translation 0.027500 0.025745 -0.041144
+            rotation 0.282214 0.282213 -0.916903 1.657445
+            children [
+              USE hombro
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 0.013150
+            centerOfMass [ 0.000597 0.007411 -0.011148 ]
+            inertiaMatrix [
+              3.709450e-06 8.762350e-06 8.321730e-06
+              -4.024030e-08 6.874690e-08 1.193370e-06
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 -0.000003 -1.000000
+          anchor -0.000000 0.009909 0.084000
+        }
+        device [
+          RotationalMotor {
+            name "Head"
+            maxVelocity 10.0
+            minPosition -1.5708
+            maxPosition 1.5708
+            maxTorque 10.0
+          }
+          PositionSensor {
+            name "Head_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.000000 0.009909 0.084000
+          rotation -0.000001 1.000000 -0.000001 3.141593
+          children [
+            Pose {
+              translation 0.009850 -0.031200 -0.005000
+              rotation -0.577350 -0.577350 -0.577352 2.094399
+              children [
+                Shape {
+                  appearance DEF servo_r_8_material PBRAppearance {
+                    baseColor 0.615686 0.811765 0.929412
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry USE servo_r
+                }
+              ]
+            }
+          ]
+          name "servo_r_4"
+          boundingObject Pose {
+            translation 0.009850 -0.031200 -0.005000
+            rotation -0.577350 -0.577350 -0.577352 2.094399
+            children [
+              USE servo_r
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 0.293507
+            centerOfMass [ 0.000811 -0.010701 -0.024916 ]
+            inertiaMatrix [
+              9.259800e-05 5.687730e-05 5.894990e-05
+              1.869680e-07 9.931930e-07 -1.984130e-06
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    boundingObject Group {
+      children [
+        Pose {
+          translation -0.059200 -0.009729 0.044310
+          rotation -0.000000 0.000000 1.000000 3.141590
+          children [
+            USE servo_l
+          ]
+        }
+        Pose {
+          translation 0.029414 -0.012991 0.020522
+          rotation 0.000000 0.000000 1.000000 3.141590
+          children [
+            USE conector_bh
+          ]
+        }
+        Pose {
+          translation -0.051750 -0.020681 -0.002776
+          rotation 0.000001 -0.707108 -0.707105 3.141591
+          children [
+            USE servo_r
+          ]
+        }
+        Pose {
+          translation -0.029414 0.011009 0.020522
+          children [
+            USE conector_bh
+          ]
+        }
+        Pose {
+          translation 0.003837 0.014302 0.001000
+          children [
+            USE sensor_imu
+          ]
+        }
+        Pose {
+          translation -0.045000 -0.021891 0.000000
+          rotation 0.000000 0.000000 1.000000 1.570800
+          children [
+            USE cadera
+          ]
+        }
+        Pose {
+          translation 0.051750 -0.020681 -0.022476
+          rotation -1.000000 -0.000000 -0.000000 1.570800
+          children [
+            USE servo_l
+          ]
+        }
+        Pose {
+          translation -0.000778 0.048373 0.084000
+          rotation 1.000000 0.000000 0.000000 1.570800
+          children [
+            USE pecho
+          ]
+        }
+        Pose {
+          translation 0.059200 0.009970 0.044310
+          children [
+            USE servo_r
+          ]
+        }
+      ]
+    }
+    physics Physics {
+      density -1
+      mass 1.221290
+      centerOfMass [ -0.000000 0.000156 0.026579 ]
+      inertiaMatrix [
+        1.994890e-03 3.573060e-03 1.833560e-03
+        1.535600e-08 3.712790e-08 -2.315490e-05
+      ]
+    }
+  }
+}

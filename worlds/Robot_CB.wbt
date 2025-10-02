@@ -1,0 +1,29 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/RBT_fix.proto"
+
+WorldInfo {
+  basicTimeStep 2
+}
+Viewpoint {
+  orientation 0.08153985820402497 0.1444222891978617 -0.9861508271592722 1.312878331239674
+  position -0.29233148659049385 1.2332156784530852 0.4913825575707581
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2000 2000
+}
+RBT_fix {
+  translation 0 0 0.24
+  controller "RBT_CONTROLLER"
+  controllerArgs [
+    ""
+  ]
+  supervisor TRUE
+}

@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "12650c08493f9b4bd5e5cfd0",
+    "documentMicroversion": "a34586f9fd8bfecc1c932f3a",
+    "documentVersion": "c1032c1b2b61cff166e727aa",
+    "elementId": "51108bef6df7be232dd4d6ea",
+    "fullConfiguration": "default",
+    "id": "MbECLCmKTUuJhy25/",
+    "isStandardContent": false,
+    "name": "L298N Motor Driver <1>",
+    "partId": "KFXB",
+    "suppressed": false,
+    "type": "Part"
+}

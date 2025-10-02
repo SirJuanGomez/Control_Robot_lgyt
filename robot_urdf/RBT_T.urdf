@@ -1,0 +1,317 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/0eaebba54d47f9cfcac04b70/w/70412a2964b95b8ac04e0aed/e/ed3f804d74e8a3e441704352 -->
+<robot name="cb_robot">
+  <!-- Link base -->
+  <link name="base">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part base -->
+    <visual>
+      <origin xyz="-5.30307e-08 0.0370338 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\base.stl"/>
+      </geometry>
+      <material name="base_material">
+        <color rgba="0.231373 0.380392 0.705882 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-5.30307e-08 0.0370338 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\base.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part l298n_motor_driver -->
+    <visual>
+      <origin xyz="1.25162e-18 0.023 0.003" rpy="-1.01343e-15 -2.63693e-46 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\l298n_motor_driver.stl"/>
+      </geometry>
+      <material name="l298n_motor_driver_material">
+        <color rgba="0.498039 0.498039 0.498039 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="1.25162e-18 0.023 0.003" rpy="-1.01343e-15 -2.63693e-46 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\l298n_motor_driver.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part estaca -->
+    <visual>
+      <origin xyz="0.130264 0.0703149 -0.0353785" rpy="1.5708 1.0037e-51 1.01541e-33"/>
+      <geometry>
+        <mesh filename="package://assets\estaca.stl"/>
+      </geometry>
+      <material name="estaca_material">
+        <color rgba="0.647059 0.647059 0.647059 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.130264 0.0703149 -0.0353785" rpy="1.5708 1.0037e-51 1.01541e-33"/>
+      <geometry>
+        <mesh filename="package://assets\estaca.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_bo_motor_frame -->
+    <visual>
+      <origin xyz="-0.000207165 0.0815649 0.038902" rpy="1.5708 3.28873e-51 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame.stl"/>
+      </geometry>
+      <material name="real_bo_motor_frame_material">
+        <color rgba="0.894118 0.913725 0.929412 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000207165 0.0815649 0.038902" rpy="1.5708 3.28873e-51 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_wheel -->
+    <visual>
+      <origin xyz="-0.0171492 0.0858956 0.0659684" rpy="3.12746 3.32528e-19 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_wheel.stl"/>
+      </geometry>
+      <material name="real_wheel_material">
+        <color rgba="0.298039 0.298039 0.298039 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0171492 0.0858956 0.0659684" rpy="3.12746 3.32528e-19 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_wheel.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_bo_motor_frame_2 -->
+    <visual>
+      <origin xyz="-0.000207165 0.0815649 0.038902" rpy="1.5708 3.28873e-51 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame__2.stl"/>
+      </geometry>
+      <material name="real_bo_motor_frame_2_material">
+        <color rgba="0.101961 0.101961 0.101961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000207165 0.0815649 0.038902" rpy="1.5708 3.28873e-51 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part shaft -->
+    <visual>
+      <origin xyz="-0.000197165 0.0815649 0.012902" rpy="-1.5708 -1.49775 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\shaft.stl"/>
+      </geometry>
+      <material name="shaft_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000197165 0.0815649 0.012902" rpy="-1.5708 -1.49775 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\shaft.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_wheel_2 -->
+    <visual>
+      <origin xyz="0.0167548 0.0781245 -0.0402297" rpy="-0.160221 2.22183e-20 2.76751e-19"/>
+      <geometry>
+        <mesh filename="package://assets\real_wheel.stl"/>
+      </geometry>
+      <material name="real_wheel_2_material">
+        <color rgba="0.298039 0.298039 0.298039 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0167548 0.0781245 -0.0402297" rpy="-0.160221 2.22183e-20 2.76751e-19"/>
+      <geometry>
+        <mesh filename="package://assets\real_wheel.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_bo_motor_gear_box -->
+    <visual>
+      <origin xyz="-0.000207165 0.0815649 0.020402" rpy="3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_gear_box.stl"/>
+      </geometry>
+      <material name="real_bo_motor_gear_box_material">
+        <color rgba="1 1 0.501961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.000207165 0.0815649 0.020402" rpy="3.14159 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_gear_box.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_bo_motor_frame_3 -->
+    <visual>
+      <origin xyz="0.0327797 -0.00671779 0.01425" rpy="-0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame.stl"/>
+      </geometry>
+      <material name="real_bo_motor_frame_3_material">
+        <color rgba="0.894118 0.913725 0.929412 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0327797 -0.00671779 0.01425" rpy="-0 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_wheel_3 -->
+    <visual>
+      <origin xyz="0.0497217 -0.0859494 0.0131544" rpy="-1.64578 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_wheel.stl"/>
+      </geometry>
+      <material name="real_wheel_3_material">
+        <color rgba="0.298039 0.298039 0.298039 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0497217 -0.0859494 0.0131544" rpy="-1.64578 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_wheel.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_bo_motor_gear_box_2 -->
+    <visual>
+      <origin xyz="0.0327797 -0.0252178 0.01425" rpy="-1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_gear_box.stl"/>
+      </geometry>
+      <material name="real_bo_motor_gear_box_2_material">
+        <color rgba="1 1 0.501961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0327797 -0.0252178 0.01425" rpy="-1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_gear_box.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part shaft_2 -->
+    <visual>
+      <origin xyz="0.0327697 -0.0327178 0.01425" rpy="1.5708 -0.0121949 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\shaft.stl"/>
+      </geometry>
+      <material name="shaft_2_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0327697 -0.0327178 0.01425" rpy="1.5708 -0.0121949 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\shaft.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_bo_motor_frame_4 -->
+    <visual>
+      <origin xyz="0.0327797 -0.00671779 0.01425" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame__2.stl"/>
+      </geometry>
+      <material name="real_bo_motor_frame_4_material">
+        <color rgba="0.101961 0.101961 0.101961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0327797 -0.00671779 0.01425" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_bo_motor_frame_5 -->
+    <visual>
+      <origin xyz="-0.0330003 -0.00671779 0.01425" rpy="-0 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame.stl"/>
+      </geometry>
+      <material name="real_bo_motor_frame_5_material">
+        <color rgba="0.894118 0.913725 0.929412 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0330003 -0.00671779 0.01425" rpy="-0 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_wheel_4 -->
+    <visual>
+      <origin xyz="-0.0499423 -0.0854249 0.0217843" rpy="1.61722 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_wheel.stl"/>
+      </geometry>
+      <material name="real_wheel_4_material">
+        <color rgba="0.298039 0.298039 0.298039 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0499423 -0.0854249 0.0217843" rpy="1.61722 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_wheel.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_bo_motor_gear_box_3 -->
+    <visual>
+      <origin xyz="-0.0330003 -0.0252178 0.01425" rpy="1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_gear_box.stl"/>
+      </geometry>
+      <material name="real_bo_motor_gear_box_3_material">
+        <color rgba="1 1 0.501961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0330003 -0.0252178 0.01425" rpy="1.5708 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_gear_box.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part shaft_3 -->
+    <visual>
+      <origin xyz="-0.0329903 -0.0327178 0.01425" rpy="-1.5708 0.133601 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\shaft.stl"/>
+      </geometry>
+      <material name="shaft_3_material">
+        <color rgba="1 1 1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0329903 -0.0327178 0.01425" rpy="-1.5708 0.133601 1.5708"/>
+      <geometry>
+        <mesh filename="package://assets\shaft.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_bo_motor_frame_6 -->
+    <visual>
+      <origin xyz="-0.0330003 -0.00671779 0.01425" rpy="3.14159 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame__2.stl"/>
+      </geometry>
+      <material name="real_bo_motor_frame_6_material">
+        <color rgba="0.101961 0.101961 0.101961 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0330003 -0.00671779 0.01425" rpy="3.14159 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets\real_bo_motor_frame__2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

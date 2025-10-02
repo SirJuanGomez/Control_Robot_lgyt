@@ -1,0 +1,14 @@
+{
+    "configuration": "default",
+    "documentId": "d9a0045ffe3f03551435d4f7",
+    "documentMicroversion": "f4f7571115cd1ad346d48510",
+    "documentVersion": "861ad248d3ea063ef300e168",
+    "elementId": "2e8408061583d3b4cc26c4ce",
+    "fullConfiguration": "default",
+    "id": "MhD41RX6/YMhgcyce",
+    "isStandardContent": false,
+    "name": "Sensor_IMU <1>",
+    "partId": "JHD",
+    "suppressed": false,
+    "type": "Part"
+}
