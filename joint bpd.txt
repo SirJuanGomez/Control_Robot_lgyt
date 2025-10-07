@@ -1,0 +1,23 @@
+JOINT PIERNAS 
+
+C_PD
+C_PI
+P_D_1
+P_I_2
+R_D
+R_I
+F_D
+F_L
+
+JOINT BRASOS 
+
+H_D
+H_I
+B_D
+B_I
+M_D
+M_I
+
+JOINT CABEZA
+
+Head
