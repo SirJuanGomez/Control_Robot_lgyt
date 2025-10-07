@@ -209,14 +209,14 @@ PROTO RBT_fix [
               }
               device [
                 RotationalMotor {
-                  name "P_D_1"
+                  name "P_D"
                   maxVelocity 10.0
                   minPosition -1.5708
                   maxPosition 1.5708
                   maxTorque 10.0
                 }
                 PositionSensor {
-                  name "P_D_1_sensor"
+                  name "P_D_sensor"
                 }
               ]
               endPoint Solid {
@@ -483,14 +483,14 @@ PROTO RBT_fix [
               }
               device [
                 RotationalMotor {
-                  name "P_I_1"
+                  name "P_I"
                   maxVelocity 10.0
                   minPosition -1.5708
                   maxPosition 1.5708
                   maxTorque 10.0
                 }
                 PositionSensor {
-                  name "P_I_1_sensor"
+                  name "P_I_sensor"
                 }
               ]
               endPoint Solid {

@@ -1,37 +1,21 @@
 from controller import Robot
 
-# Crear instancia del robot
-robot = Robot()
-timestep = int(robot.getBasicTimeStep())
+# Conectar con Webots
+robot = Robot(Robot_Bipedo)
 
-# Lista de motores según tu PROTO
-motor_names = ["C_PD", "P_D_1", "R_D", "F_R"]
-imu = robot.getDevice("SensorIMU")
-imu.enable(timestep)  # habilitar el IMU
+# Configuración del tiempo de simulación
+time_step = int(robot.getBasicTimeStep())  # Tiempo por paso de simulación
 
-motors = {}
+# Obtener los actuadores, sensores, etc.
+motor1 = robot.getMotor('motor1')  # Usa el nombre de tu motor en Webots
+motor2 = robot.getMotor('motor2')
+# (Reemplaza con los motores o actuadores reales que tenga tu robot)
 
-# Inicializar motores
-for name in motor_names:
-    motor = robot.getDevice(name)
-    motor.setPosition(0.0)   # posición inicial en radianes
-    motor.setVelocity(1.0)   # velocidad
-    motors[name] = motor
+# Configurar los motores en modo de velocidad
+motor1.setPosition(float('inf'))  # Modo velocidad
+motor2.setPosition(float('inf'))
 
-# Loop principal de simulación
-angle = 0.5  # ejemplo: mover a 0.5 rad
-direction = 1
-
-while robot.step(timestep) != -1:
-    # Mover motores
-    for name, motor in motors.items():
-        motor.setPosition(angle)
-    
-    # Cambiar dirección para simular oscilación
-    angle += 0.01 * direction
-    if angle > 1.0 or angle < -1.0:
-        direction *= -1
-    
-    # Leer valores del IMU
-    imu_values = imu.getRollPitchYaw()  # devuelve roll, pitch, yaw en radianes
-    print(f"IMU Roll: {imu_values[0]:.3f}, Pitch: {imu_values[1]:.3f}, Yaw: {imu_values[2]:.3f}")
+# Lógica de control simple, por ejemplo, mantener la velocidad de los motores
+while robot.step(time_step) != -1:
+    motor1.setVelocity(1.0)  # Establece velocidad (ejemplo)
+    motor2.setVelocity(1.0)
